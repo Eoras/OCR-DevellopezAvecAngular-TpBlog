@@ -1,3 +1,31 @@
-<ul class="list-group">
-    <app-post-list-item *ngFor="let post of posts" [post]="post"></app-post-list-item>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>POSTS</h1>
+            <ul class="list-group">
+                <li *ngFor="let post of posts; let i = index"
+                    [ngClass]="{
+                    'list-group-item': true,
+                    'list-group-item-danger': post.loveIts < 0,
+                    'list-group-item-success': post.loveIts > 0}">
+
+                    <span class="float-right text-secondary font-italic">
+                        <small class="font-italic">
+                            {{ post.created_at | date: 'dd/MM/y à H:mm:ss'}}
+                            <i class="fa fa-clock" aria-hidden="true"></i>
+                        </small>
+                    </span>
+
+                    <h2 class="pull-left clearfix">{{ post.title }}</h2>
+                    <p>{{ post.content }}</p>
+                    <button class="btn btn-success" (click)="onAddLike(i)">I like :)</button>
+                    <button class="btn btn-danger" (click)="onDeleteLike(i)">I don't like !!!</button>
+                    <button class="btn btn-default btn-sm float-right text-danger" (click)="onDeletePost(i)">
+                        <span class="fa fa-trash" aria-hidden="true"></span> Supprimer post
+                    </button>
+                    {{ post.loveIts }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
