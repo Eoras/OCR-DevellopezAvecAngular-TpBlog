@@ -38,20 +38,35 @@ export class PostService {
     }
 
     removePost(index: number) {
-
         this.posts.splice(index, 1);
         this.savePosts();
         this.emitPosts();
     }
 
-    addLike(index: number) {
-        this.posts[index].loveIts++;
+    addLike(post: Post) {
+        this.posts.find(
+            (value: Post) => {
+                if (post === value) {
+                    value.loveIts++;
+                    return true;
+                }
+                return false;
+            }
+        );
         this.savePosts();
         this.emitPosts();
     }
 
-    deleteLike(index: number) {
-        this.posts[index].loveIts--;
+    deleteLike(post: Post) {
+        this.posts.find(
+            (value) => {
+                if (post === value) {
+                    value.loveIts--;
+                    return true;
+                }
+                return false;
+            }
+        );
         this.savePosts();
         this.emitPosts();
     }

@@ -18,8 +18,8 @@
 
                     <h2 class="pull-left clearfix">{{ post.title }}</h2>
                     <p>{{ post.content }}</p>
-                    <button class="btn btn-success" (click)="onAddLike(i)">I like :)</button>
-                    <button class="btn btn-danger" (click)="onDeleteLike(i)">I don't like !!!</button>
+                    <button class="btn btn-success" (click)="onAddLike(post)">I like :)</button>
+                    <button class="btn btn-danger" (click)="onDeleteLike(post)">I don't like !!!</button>
                     <button class="btn btn-default btn-sm float-right text-danger" (click)="onDeletePost(i)">
                         <span class="fa fa-trash" aria-hidden="true"></span> Supprimer post
                     </button>

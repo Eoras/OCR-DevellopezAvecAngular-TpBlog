@@ -39,8 +39,8 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.postService.deleteLike(post);
     }
 
-    onDeletePost(post: Post) {
-        this.postService.removePost(post);
+    onDeletePost(index: number) {
+        this.postService.removePost(index);
     }
 
 }

@@ -1,21 +1,10 @@
 export class Post {
 
     public loveIts: number;
-    public created_at: Date;
+    public created_at: number;
 
     constructor(public title: string, public content: string) {
         this.loveIts = 0;
-        this.created_at = new Date().toString();
+        this.created_at = new Date().getTime();
     }
 }
-/*
-Mon TP OpenClassRoom
-Ceci est un TP OpenClassRoom
-
-1
-MySQL
-Je préfère utiliser FireBase
-
--1
-FireBase
-C'est vraiment bien et pratique ;)*/

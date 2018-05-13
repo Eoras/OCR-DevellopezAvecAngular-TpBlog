@@ -11,7 +11,7 @@ import {Post} from '../../models/Post';
 })
 export class PostNewItemComponent implements OnInit {
 
-  postForm = FormGroup;
+  postForm: FormGroup;
 
   constructor(private postService: PostService, private router: Router, private formBuilder: FormBuilder) { }
 
